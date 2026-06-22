@@ -1,0 +1,1 @@
+"""SupplyScan local dashboard package."""

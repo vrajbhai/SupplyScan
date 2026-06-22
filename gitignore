@@ -1,0 +1,5 @@
+config.env
+.env
+.supplyscan/
+__pycache__/
+*.pyc

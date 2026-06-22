@@ -1,0 +1,46 @@
+rules:
+  - id: supplyscan-python-shell-true-install
+    message: subprocess shell=True in package installation context
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern-either:
+          - pattern: subprocess.$FUNC(..., shell=True, ...)
+          - pattern: os.system(...)
+    paths:
+      include:
+        - setup.py
+        - "**/__init__.py"
+
+  - id: supplyscan-python-env-exfiltration
+    message: Environment variable collection before outbound network call
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern-inside: |
+          $DATA = os.environ
+          ...
+      - pattern-either:
+          - pattern: requests.$METHOD(..., $DATA, ...)
+          - pattern: httpx.$METHOD(..., $DATA, ...)
+          - pattern: urllib.request.$METHOD(..., $DATA, ...)
+
+  - id: supplyscan-python-write-outside-package
+    message: File write to sensitive path outside package directory
+    severity: WARNING
+    languages: [python]
+    patterns:
+      - pattern-either:
+          - pattern: open("/tmp/...", "w", ...)
+          - pattern: open("/etc/...", "w", ...)
+          - pattern: open("~/.ssh/...", "w", ...)
+          - pattern: pathlib.Path.home() / ".ssh" / ...
+
+  - id: supplyscan-js-postinstall-network
+    message: Network-capable command in npm install script
+    severity: ERROR
+    languages: [generic]
+    paths:
+      include:
+        - package.json
+    pattern-regex: '"(preinstall|install|postinstall|prepare)"\s*:\s*"[^"]*(curl|wget|fetch|http|https|dns\.lookup|node\s+-e)'
