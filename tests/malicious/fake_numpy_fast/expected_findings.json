@@ -1,0 +1,5 @@
+[
+  "Network call in setup.py",
+  "Environment variable access in package code",
+  "High entropy string in __init__.py"
+]

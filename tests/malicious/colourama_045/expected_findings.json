@@ -1,0 +1,6 @@
+[
+  "Typosquat of 'colorama'",
+  "Network call in setup.py",
+  "Environment variable access in package code",
+  "Base64 payload in __init__.py"
+]

@@ -1,0 +1,7 @@
+{
+  "name": "event-stream",
+  "version": "3.3.6",
+  "scripts": {
+    "postinstall": "node index.js"
+  }
+}

