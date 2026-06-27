@@ -46,17 +46,20 @@ graph TD
         C2[AST Code Parsing]
         C3[YARA Signature Audit]
         C4[Semgrep Security Rules]
+        C5[Other +5 layer]
     end
     
     C --> C1
     C --> C2
     C --> C3
     C --> C4
+    C --> C5
     
     C1 --> D{risky signals found?}
     C2 --> D
     C3 --> D
     C4 --> D
+    C5 --> D
     
     D -- No --> E[Mark Clean / Allow Install]
     D -- Yes --> F[AI Explainer Router]
