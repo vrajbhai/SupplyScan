@@ -23,7 +23,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install SupplyScan
-        run: python -m pip install .[dev]
+        # run: python -m pip install .[dev]
+        # This line was updated to pull from GitHub!
+        run: pip install git+https://github.com/vrajbhai/SupplyScan.git 
 
       - name: Ensure requirements file exists
         run: |
