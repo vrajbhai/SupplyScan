@@ -83,6 +83,14 @@ graph TD
 
 ---
 
+## 🤖 GitHub Action Integration
+
+SupplyScan can act as an automated CI/CD dependency gatekeeper! When configured, any pull request that introduces a malicious or suspicious package will be blocked automatically, and a detailed threat explanation will be commented directly on the PR.
+
+**Example Proof:** [View a live demonstration of a blocked PR here](https://github.com/vrajbhai/SupplyScan-test/pull/1)
+
+---
+
 ## 🚀 Quickstart
 
 Get SupplyScan up and running locally in three steps:
